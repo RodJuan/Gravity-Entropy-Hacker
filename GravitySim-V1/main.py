@@ -2,6 +2,7 @@
 from scipy.integrate import odeint
 import matplotlib.pyplot as plt
 from core.physics import GravityEngine
+from visualizer import animate_gravity_engine
 
 # Configuración Inicial
 engine = GravityEngine(L=1.0, m_total=10.0, fluid_viscosity=0.5, friction_coeff=0.1)
@@ -10,6 +11,9 @@ t = np.linspace(0, 50, 1000)
 
 # Simulación
 solution = odeint(engine.system_dynamics, initial_state, t)
+
+# Ejecutar animación
+animate_gravity_engine(t, solution, engine.L)
 
 # Visualización
 plt.figure(figsize=(10, 6))

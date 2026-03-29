@@ -1,1 +1,0 @@
-# Gravity-Entropy-Hacker

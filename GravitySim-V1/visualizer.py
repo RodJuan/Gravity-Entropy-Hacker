@@ -50,5 +50,9 @@ def animate_gravity_engine(t, states, L):
         return line, mass1_patch, mass2_patch, time_text
 
     ani = FuncAnimation(fig, update, frames=len(t), init_func=init, blit=True, interval=20)
-    plt.show()
+    # En lugar de plt.show()
+    print("Guardando animación como gravity_sim.gif...")
+    ani.save('gravity_sim.gif', writer='pillow', fps=30)
+    print("¡Listo! Descarga el archivo gravity_sim.gif para verlo.")
+    #plt.show()
     return ani
